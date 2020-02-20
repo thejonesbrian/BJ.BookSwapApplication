@@ -23,6 +23,15 @@ namespace BJ.BookSwapApplication.Controllers
             return View();
         }
 
+        public IActionResult User()
+        {
+            return View();
+        }
+        public IActionResult Search()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

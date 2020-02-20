@@ -1,0 +1,107 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+    <div class="user-card">
+        <div class="user-image">
+            <img src="https://images.pexels.com/photos/2787341/pexels-photo-2787341.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        </div>
+        <div class="user-detail">
+            <h1 class="user-name">Ali</h1>
+            <h4 class="location">- <em>Auckland, New Zealand</em></h4>
+            <button class="contact-btn">Message</button>
+        </div>
+    </div>
+</div>
+<div class="list-container">
+    <div class="header">
+        <h4>Listings</h4>
+    </div>
+
+    <div class="listing-content-flex-header" style="display: flex;">
+        <div style="flex: 2">Book Title</div>
+        <div style="flex: 1">Author</div>
+        <div style="flex: 1">ISBN</div>
+        <div style="flex: 1">Location</div>
+        <div style="flex: 0.5">Listed Date</div>
+        <div style="flex: 0.5">Request</div>
+    </div>
+    <!-- Dummy Test Data
+    <div class="listing-content-flex-body" style="display: flex;">
+        <div style="flex: 1">100 Books that Changed the World</div>
+        <div style="flex: 1">Scott Christianson</div>
+        <div style="flex: 1">9781849944519</div>
+        <div style="flex: 1">Auckland</div>
+        <div style="flex: 1">14/1/2020</div>
+        <div style="flex: 1"><button class="request-btn">Request?</button></div>
+    </div>
+    <div class="listing-content-flex-body" style="display: flex;">
+        <div style="flex: 1">100 Books that Changed the World</div>
+        <div style="flex: 1">Scott Christianson</div>
+        <div style="flex: 1">9781849944519</div>
+        <div style="flex: 1">Auckland</div>
+        <div style="flex: 1">14/1/2020</div>
+        <div style="flex: 1"><button class="request-btn">Request?</button></div>
+    </div>-->
+
+</div>
+<script>
+    var listings = [];
+
+    $( document ).ready(function() {
+        console.log("ready!");
+        populateListings(); 
+        drawListings();
+    });
+
+    function populateListings() {
+        // Call a function that gets the data
+
+        // Populate the listings array with that data by looping over the data and building building objects
+
+        listings =
+            [
+                {
+                    bookTitle: "The Book Thief",
+                    author: "Tim Smith",
+                    isbn: "2345678987654",
+                    location: "Auckland",
+                    listedDate: "14/1/2020"
+                },
+                {
+                    bookTitle: "Brians books",
+                    author: "Brian Jones",
+                    isbn: "34575688765",
+                    location: "Auckland",
+                    listedDate: "14/1/2020"
+                },
+                 {
+                    bookTitle: "Brians books",
+                    author: "Brian Jones",
+                    isbn: "34575688765",
+                    location: "Auckland",
+                    listedDate: "14/1/2020"
+                }
+            ];
+    }
+
+
+    function drawListings() {
+      
+        for (var element of listings) {
+
+            $('.list-container').append(`
+            <div class="listing-content-flex-body" style="display: flex;">
+                <div style="flex: 2">${element.bookTitle}</div>
+                <div style="flex: 1">${element.author}</div>
+                <div style="flex: 1">${element.isbn}</div>
+                <div style="flex: 1">${element.location}</div>
+                <div style="flex: 0.5">${element.listedDate}</div>
+                <div style="flex: 0.5"><button class="user-request-btn">Request</button></div>
+            </div>
+            `)
+        }
+    }
+</script>
